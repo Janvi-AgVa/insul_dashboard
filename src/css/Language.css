@@ -1,0 +1,33 @@
+.main-container{
+    margin:8% 30% ;
+    
+    font-family: Roboto;
+    font-style: none;
+}
+.heading{
+    font-size: 30px;
+    margin:5% 25%
+}
+h1{
+    margin:0% 38%
+}
+.dropdown{
+    width:55%;
+    margin:0% 20%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+}
+p{
+    margin:2% 20%;
+    font-size:15px;
+    font-style: none;
+}
+.button{
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 5px;
+    
+    margin:10%;
+    margin-left: 80%;
+    
+}

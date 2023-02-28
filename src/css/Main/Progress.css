@@ -1,0 +1,55 @@
+
+
+.progressbar{
+	position: relative;
+	overflow: hidden;
+	width: 350px;
+	height: 20px;
+    margin-left: 5%;
+	border-radius: 10px;
+	background-color: #eee;
+ 
+}
+.progressbar2{
+	position: relative;
+	overflow: hidden;
+	width: 60px;
+	display: flex;
+	flex-direction: column-reverse;
+	height: 220px;
+    margin-left: 5%;
+	border-radius: 90px;
+	background-color: #eee;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ 
+}
+.Graph{
+
+margin-top: 5%;
+}
+.text{
+    margin-left: 5%;
+font-size: 20px;
+margin-bottom: 5%;
+}
+.progressPercent{
+	font-weight: 600;
+	font-family:'Roboto';
+    height: 10px;
+    width: 130px;
+	font-size: 18px;
+	left: 50%;
+	top: 0%;
+    margin-left: 2%;	
+}
+.progressPercent2{
+	font-weight: 600;
+	font-family:'Franklin Gothic Medium';
+	position: absolute;
+	left: 50%;
+	top: 80%;
+	transform: translate(-50%,-50%);
+	color: #eee;
+	text-shadow: -1px 0 #555, 0 1px #555, 1px 0 #555, 0 -1px #555;
+}
+
