@@ -1,0 +1,42 @@
+.report-form-div {
+    margin-top: 100px;
+}
+.report-div{
+    margin: 5% 0% 0% 5%;
+    width: 40%;
+    height: 250px;
+    background-color: white;
+    border: 0.2px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px grey
+
+}
+.report-title{
+    font-size: 25px;
+    color: #353656;
+    margin: 2% 1% 0% 2%;
+}
+.date-tag{
+    font-size: 15px;
+    color: #353656 .5%;
+    margin: 2% 1% 0% 2%;
+    
+
+}
+.Grid{
+    margin-left: 50%;
+    top:10%;
+    width: 200px;
+    height: 180px;
+}
+.showReport{
+    height:'300px';
+    position: absolute;
+    width:'40%';
+    background-color: aqua;
+    border: 0.2px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px grey
+
+
+}

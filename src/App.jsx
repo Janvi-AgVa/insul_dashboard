@@ -7,7 +7,7 @@ import Register from "./screens/auth/Register";
 import ForgetPassword from "./screens/auth/ForgetPassword";
 import ResetPassword from "./screens/auth/ResetPassword";
 import Language from "./screens/Language";
-import Setting from "./screens/Main/Setting"
+import Setting from "./screens/Main/Setting/Setting"
 import BolusWizard from "./screens/Main/Bolus/BolusWizard"
 import Report from "./screens/Main/Report/Report"
 import Profile from "./screens/Main/Profile/Profile"

@@ -1,8 +1,9 @@
 import React from 'react'
 import Navbar from '../../../utils/Navbar'
 import SideBar from '../../../utils/SideBar'
-import { Row, Col } from 'react-bootstrap'
+import { Row} from 'react-bootstrap'
 import Footer from '../../../utils/Footer'
+import ReportTable from './ReportTable'
 function Report() {
   return (
     <div className='Main' >
@@ -19,9 +20,7 @@ function Report() {
 
       <section className='main-content' style={{width:'100%'}}>
     
-      <div className='main'>
-      <h1>Report</h1>
-      </div>
+      <ReportTable/>
       
       </section>
     </div>

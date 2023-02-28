@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from '../../../utils/Navbar'
 import SideBar from '../../../utils/SideBar'
-import { Row, Col } from 'react-bootstrap'
+import { Row } from 'react-bootstrap'
 import WelcomeTag from './WelcomeTag'
 import Today_Reading from './Today_Reading'
 import WeekReading from './WeekReading'

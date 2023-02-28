@@ -1,8 +1,9 @@
 import React from 'react'
-import Navbar from '../../utils/Navbar'
-import SideBar from '../../utils/SideBar'
-import { Row, Col } from 'react-bootstrap'
-import Footer from '../../utils/Footer'
+import Navbar from '../../../utils/Navbar'
+import SideBar from '../../../utils/SideBar'
+import { Row } from 'react-bootstrap'
+import Footer from '../../../utils/Footer'
+import SettingForm from './SettingForm'
 function Setting() {
   return (
     <div className='Main' >
@@ -19,9 +20,7 @@ function Setting() {
 
       <section className='main-content' style={{width:'100%'}}>
     
-      <div>
-       <p> Setting</p>
-      </div>
+      <SettingForm/>
       
       </section>
     </div>

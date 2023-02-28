@@ -2,12 +2,10 @@ import React, { useState, useEffect } from "react";
 import Cookies from 'universal-cookie';
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Table from 'react-bootstrap/Table';
 import { adminRegister } from "../../store/action/AdminAction";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { validateEmailHelper } from "../../helper/Emails";
-import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
@@ -568,7 +566,8 @@ const Register = () => {
                   paddingTop: '5%',
                   paddingLeft: '30%',
                   fontSize: '45px',
-                  fontFamily: 'Arial'
+                  fontFamily: 'Arial',
+                  color:'white'
                 }}>
                   InsuLink
                 </h1>
@@ -581,6 +580,7 @@ const Register = () => {
                   <h1 style={{
                     fontSize: '45px',
                     margin: '0%',
+                    color:'white'
                   }}>
                     Create an Account
                   </h1>
@@ -588,6 +588,7 @@ const Register = () => {
                     fontSize: '20px',
                     margin: '0%',
                     paddingBottom: '20%',
+                    color:'white'
 
                   }}>
                     Provide your personal information to help <br />

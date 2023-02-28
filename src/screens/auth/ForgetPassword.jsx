@@ -41,7 +41,7 @@ export default function ForgetPassword() {
 
   // console.log("forgetPasswordReducer", forgetPasswordReducer);
 
-  const { loading, error, forgetPasswordInfo } = forgetPasswordReducer;
+  const {  error, forgetPasswordInfo } = forgetPasswordReducer;
   const navigate = useNavigate();
 
   if (error) {

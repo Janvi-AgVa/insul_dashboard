@@ -117,7 +117,8 @@ export default function Login() {
                   paddingTop: '5%',
                   paddingLeft: '10%',
                   fontSize: '45px',
-                  fontFamily: 'Arial'
+                  fontFamily: 'Arial',
+                  color:'white'
                 }}>
                   InsuLink
                 </h1>
@@ -129,7 +130,8 @@ export default function Login() {
                 }}>
                   <h1 style={{
                     fontSize: '45px',
-                    margin: '0%',
+                    margin: '1% ',
+                    color:'white'
                   }}>
                     Welcome
                   </h1>
@@ -137,6 +139,7 @@ export default function Login() {
                     fontSize: '20px',
                     margin: '0%',
                     paddingBottom: '20%',
+                    color:'white'
 
                   }}>
                     Get into your account using your email
