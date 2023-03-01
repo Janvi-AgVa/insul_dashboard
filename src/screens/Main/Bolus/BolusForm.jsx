@@ -4,6 +4,7 @@ import info from '../../../asset/img/102.png'
 import info2 from '../../../asset/img/info.png'
 import pen from '../../../asset/img/pen.png'
 import { Card } from 'react-bootstrap'
+import { ArrayList } from '../../../helper/ArrayList'
 function BolusForm() {
     const [advance, setadvance] = useState(false)
     const [calculates, setCalculate] = useState(false)
@@ -11,38 +12,26 @@ function BolusForm() {
    
     const [valueBox, setValueBox] = useState(false)
      const [valueBox2, setValueBox2] = useState(false)
+     const [valueBox3, setValueBox3] = useState(false)
+     const [valueBox4, setValueBox4] = useState(false)
     const changeStyle = () => {
         console.log("you just clicked");
 
         setStyle("cont2");
         setadvance(!advance)
     };
-    const [selectValue, setSelectValue] = useState("");
-    const [selectValue1, setSelectValue1] = useState("");
-    const onChange = (event) => {
-        const value = event.target.value;
-        setSelectValue(value);
-    };
-    const onChange2 = (event) => {
-        const value = event.target.value;
-        setSelectValue1(value);
-    };
-    const IC=0
-    var arr = []; var j = 0;
-    for (let index = 30; index < 101; index++) {
-
-        arr[j] = index;
-        j++;
-
-    }
-    var arr2=[]
-    for (let index = 0; index < 26; index++) {
-
-        arr2[j] = index;
-        j++;
-
-    }
-    console.log(arr)
+    // const [selectValue, setSelectValue] = useState("");
+    // const [selectValue1, setSelectValue1] = useState("");
+    // const onChange = (event) => {
+    //     const value = event.target.value;
+    //     setSelectValue(value);
+    // };
+    // const onChange2 = (event) => {
+    //     const value = event.target.value;
+    //     setSelectValue1(value);
+    // };
+    // const IC=0
+   
     return (
         <div className='form-div'>
 
@@ -123,7 +112,7 @@ function BolusForm() {
 
                         }}
                         src={pen}
-                        onClick={() => setValueBox(!valueBox)}
+                       
                     />
 
                 </div>
@@ -165,8 +154,8 @@ function BolusForm() {
 
 
                         <div>
-                            <select onChange={onChange} className="form-select">
-                                {arr.map(data => (
+                            <select  className="form-select">
+                                {ArrayList(10,401).map(data => (
                                     <option value={data}>{data}</option>
                                 ))}
 
@@ -211,7 +200,7 @@ function BolusForm() {
 
                         }}
                         src={pen}
-                        onClick={() => setValueBox(!valueBox)}
+                        
                     />
 
                 </div>
@@ -256,8 +245,8 @@ function BolusForm() {
 
 
                         <div>
-                            <select onChange={onChange2} style={{width:'100%',height:'40px'}} >
-                                {arr2.map(data => (
+                            <select style={{width:'100%',height:'40px'}} >
+                                {ArrayList(0,26).map(data => (
                                     <option value={data}>{data}</option>
                                 ))}
 
@@ -277,7 +266,8 @@ function BolusForm() {
          
         
              
-            {advance && (<div className='bolus-main-div'>
+            {advance && (
+            <div className='bolus-main-div'>
 
                 <div className='bolus-value-box'>
                     <h6 style={{ margin: '5% 1% 0% 2%', fontSize: '15px' }}>Target BG</h6>
@@ -303,11 +293,41 @@ function BolusForm() {
 
                         }}
                         src={pen}
-                        onClick={() => setValueBox(!valueBox)}
+                        onClick={() => setValueBox4(!valueBox4)}
                     />
 
                 </div>
+                
+                { valueBox4 && 
+                ( <div className='Insul-Value-div'>
+                    <Card >
+                        <div style={{ display: 'flex' }}>
+                            <h6 style={{ fontSize: '20px', color: 'black' }}>Target BG</h6>  <span style={{ margin: '2% 1% 0% 60%', fontSize: '30px' }} onClick={() => setValueBox4(!valueBox4)} >+</span>
 
+                        </div>
+
+
+                        <div>
+                            <select style={{width:'100%',height:'40px'}} >
+                                {ArrayList(0,251).map(data => (
+                                    <option value={data}>{data}</option>
+                                ))}
+
+                            </select>
+
+
+                        
+                        </div>
+
+
+                    </Card>
+                    </div>
+                   ) }
+
+
+
+
+            
                 <div className='bolus-value-box'>
                     <h6 style={{ margin: '5% 1% 0% 2%', fontSize: '15px' }}>Current BG</h6>
                     <img
@@ -332,11 +352,34 @@ function BolusForm() {
 
                         }}
                         src={pen}
-                        onClick={() => setValueBox(!valueBox)}
+                        onClick={() => setValueBox3(!valueBox3)}
                     />
 
                 </div>
+                { valueBox3 && ( <div className='Insul-Value-div'>
+                    <Card >
+                        <div style={{ display: 'flex' }}>
+                            <h6 style={{ fontSize: '20px', color: 'black' }}>Current BG</h6>  <span style={{ margin: '2% 1% 0% 60%', fontSize: '30px' }} onClick={() => setValueBox3(!valueBox3)} >+</span>
 
+                        </div>
+
+
+                        <div>
+                            <select style={{width:'100%',height:'40px'}} >
+                                {ArrayList(0,301).map(data => (
+                                    <option value={data}>{data}</option>
+                                ))}
+
+                            </select>
+
+
+                        
+                        </div>
+
+
+                    </Card>
+                    </div>
+                   ) }
 
 
 

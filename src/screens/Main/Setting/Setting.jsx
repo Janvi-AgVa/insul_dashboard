@@ -4,7 +4,6 @@ import SideBar from '../../../utils/SideBar'
 import { Row, Dropdown} from 'react-bootstrap'
 import Footer from '../../../utils/Footer'
 import SettingForm from './SettingForm'
-import arrow from '../../../asset/img/down-arrow.png'
 function Setting() {
   return (
     <div className='Main' >
