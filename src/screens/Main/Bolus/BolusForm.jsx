@@ -8,13 +8,41 @@ function BolusForm() {
     const [advance, setadvance] = useState(false)
     const [calculates, setCalculate] = useState(false)
     const [style, setStyle] = useState('bolus-advance-box')
+   
     const [valueBox, setValueBox] = useState(false)
+     const [valueBox2, setValueBox2] = useState(false)
     const changeStyle = () => {
         console.log("you just clicked");
 
         setStyle("cont2");
         setadvance(!advance)
     };
+    const [selectValue, setSelectValue] = useState("");
+    const [selectValue1, setSelectValue1] = useState("");
+    const onChange = (event) => {
+        const value = event.target.value;
+        setSelectValue(value);
+    };
+    const onChange2 = (event) => {
+        const value = event.target.value;
+        setSelectValue1(value);
+    };
+    const IC=0
+    var arr = []; var j = 0;
+    for (let index = 30; index < 101; index++) {
+
+        arr[j] = index;
+        j++;
+
+    }
+    var arr2=[]
+    for (let index = 0; index < 26; index++) {
+
+        arr2[j] = index;
+        j++;
+
+    }
+    console.log(arr)
     return (
         <div className='form-div'>
 
@@ -99,15 +127,7 @@ function BolusForm() {
                     />
 
                 </div>
-                {valueBox && (<div className='Value-card'>
-                    <Card >
-                        <div style={{display:'flex'}}>
-                            <h6 style={{fontSize:'20px',color:'black'}}>Select IC Ratio</h6>  <span style={{ margin:'2% 1% 0% 60%',fontSize:'30px'}} onClick={()=>setValueBox(!valueBox)} >+</span>
-                          
-                        </div>
-                    </Card>
-                </div>
-                )}
+
                 <div className='bolus-value-box'>
                     <h6 style={{ margin: '5% 2% 0% 2%', fontSize: '15px' }}>Carb Intake</h6>
                     <img
@@ -136,6 +156,30 @@ function BolusForm() {
                     />
 
                 </div>
+                {valueBox && (<div className='Value-card'>
+                    <Card >
+                        <div style={{ display: 'flex' }}>
+                            <h6 style={{ fontSize: '20px', color: 'black' }}>Carb Intake</h6>  <span style={{ margin: '2% 1% 0% 60%', fontSize: '30px' }} onClick={() => setValueBox(!valueBox)} >+</span>
+
+                        </div>
+
+
+                        <div>
+                            <select onChange={onChange} className="form-select">
+                                {arr.map(data => (
+                                    <option value={data}>{data}</option>
+                                ))}
+
+                            </select>
+
+
+                         
+                        </div>
+
+
+                    </Card>
+                </div>
+                )}
 
 
 
@@ -171,9 +215,6 @@ function BolusForm() {
                     />
 
                 </div>
-
-
-
                 <div className={style}><h1 onClick={changeStyle}>ADVANCE OPTION</h1></div>
                 {advance && (
                     <div className='bolus-value-box'>
@@ -200,16 +241,42 @@ function BolusForm() {
 
                             }}
                             src={pen}
-                            onClick={() => setValueBox(!valueBox)}
+                            onClick={() => setValueBox2(!valueBox2)}
                         />
 
                     </div>
+                    
+                    )}
+                    { valueBox2 && ( <div className='Insul-Value-div'>
+                    <Card >
+                        <div style={{ display: 'flex' }}>
+                            <h6 style={{ fontSize: '20px', color: 'black' }}>Insulin Intake</h6>  <span style={{ margin: '2% 1% 0% 60%', fontSize: '30px' }} onClick={() => setValueBox2(!valueBox2)} >+</span>
+
+                        </div>
 
 
-                )}
+                        <div>
+                            <select onChange={onChange2} style={{width:'100%',height:'40px'}} >
+                                {arr2.map(data => (
+                                    <option value={data}>{data}</option>
+                                ))}
+
+                            </select>
 
 
+                        
+                        </div>
+
+
+                    </Card>
+                    </div>
+                   ) }
+                   
             </div>
+            
+         
+        
+             
             {advance && (<div className='bolus-main-div'>
 
                 <div className='bolus-value-box'>

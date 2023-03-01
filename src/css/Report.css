@@ -11,6 +11,17 @@
     box-shadow: 2px 2px 5px grey
 
 }
+.cardreport{
+    width: 40%;
+    top: 15%;
+    left: 55%;
+    z-index: 100;
+    position: absolute;
+    box-shadow: 2px 2px 5px grey;
+    border: 0.2px;
+    border-radius: 5px;
+
+}
 .report-title{
     font-size: 25px;
     color: #353656;
