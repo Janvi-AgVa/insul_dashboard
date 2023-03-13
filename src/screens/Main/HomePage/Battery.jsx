@@ -87,6 +87,7 @@ function Battery() {
             }}>
             Sufficient</p>)
           }
+          
 
         </div>
       </div>

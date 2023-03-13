@@ -15,23 +15,32 @@ function BolusForm() {
      const [valueBox3, setValueBox3] = useState(false)
      const [valueBox4, setValueBox4] = useState(false)
     const changeStyle = () => {
-        console.log("you just clicked");
-
         setStyle("cont2");
         setadvance(!advance)
     };
-    // const [selectValue, setSelectValue] = useState("");
-    // const [selectValue1, setSelectValue1] = useState("");
-    // const onChange = (event) => {
-    //     const value = event.target.value;
-    //     setSelectValue(value);
-    // };
-    // const onChange2 = (event) => {
-    //     const value = event.target.value;
-    //     setSelectValue1(value);
-    // };
-    // const IC=0
-   
+    const [ActiveInsulin, setActiveInsulin] = useState("");
+    const [CarbIntake, setCarbIntake] = useState("");
+    const [CurrentBG, setCurrentBG] = useState("");
+    const [TargetBG, setTargetBG] = useState("");
+    const onChange = (event) => {
+        const value = event.target.value;
+        setActiveInsulin(value);
+    };
+
+    const onChange2 = (event) => {
+        const value = event.target.value;
+        setCarbIntake(value);
+    };
+    const onChange3 = (event) => {
+        const value = event.target.value;
+        setTargetBG(value);
+    };
+    const onChange4 = (event) => {
+        const value = event.target.value;
+        setCurrentBG(value);
+    };
+
+    
     return (
         <div className='form-div'>
 
@@ -128,7 +137,7 @@ function BolusForm() {
                         }}
                         src={info2}
                     />
-                    <p style={{ fontSize: '20px', margin: "3.5% 0% 0% 47%", color: 'gray' }}>0.0</p>
+                    <p style={{ fontSize: '20px', margin: "3.5% 0% 0% 47%", color: 'gray' }}>{CarbIntake}</p>
                     <p style={{ margin: "5% 0% 0% 0%" }}>gms &nbsp; </p>
                     <p style={{ color: 'gray', margin: '5% 1% 0% 1%' }}>|</p>
                     <img
@@ -154,7 +163,7 @@ function BolusForm() {
 
 
                         <div>
-                            <select  className="form-select">
+                            <select  className="form-select" onChange={onChange2}>
                                 {ArrayList(10,401).map(data => (
                                     <option value={data}>{data}</option>
                                 ))}
@@ -217,7 +226,7 @@ function BolusForm() {
                             }}
                             src={info2}
                         />
-                        <p style={{ fontSize: '20px', margin: "3.5% 0% 0% 45%", color: 'gray' }}>0.0</p>
+                        <p style={{ fontSize: '20px', margin: "3.5% 0% 0% 45%", color: 'gray' }}>{ActiveInsulin}</p>
                         <p style={{ margin: "5% 0% 0% 0%" }}>unit &nbsp; </p>
                         <p style={{ color: 'gray', margin: '5% 1% 0% 1%' }}>|</p>
                         <img
@@ -245,9 +254,9 @@ function BolusForm() {
 
 
                         <div>
-                            <select style={{width:'100%',height:'40px'}} >
+                            <select style={{width:'100%',height:'40px'}} onChange={onChange}>
                                 {ArrayList(0,26).map(data => (
-                                    <option value={data}>{data}</option>
+                                    <option value={data} >{data}</option>
                                 ))}
 
                             </select>
@@ -280,7 +289,7 @@ function BolusForm() {
                         }}
                         src={info2}
                     />
-                    <p style={{ fontSize: '20px', margin: "3.5% 0% 0% 50%", color: 'gray' }}>0.0</p>
+                    <p style={{ fontSize: '20px', margin: "3.5% 0% 0% 50%", color: 'gray' }}>{TargetBG}</p>
                     <p style={{ margin: "5% 0% 0% 0%" }}>md/dl &nbsp; </p>
                     <p style={{ color: 'gray', margin: '5% 1% 0% 1%' }}>|</p>
                     <img
@@ -308,7 +317,7 @@ function BolusForm() {
 
 
                         <div>
-                            <select style={{width:'100%',height:'40px'}} >
+                            <select style={{width:'100%',height:'40px'}} onChange={onChange3}>
                                 {ArrayList(0,251).map(data => (
                                     <option value={data}>{data}</option>
                                 ))}
@@ -339,7 +348,7 @@ function BolusForm() {
                         }}
                         src={info2}
                     />
-                    <p style={{ fontSize: '20px', margin: "3.5% 0% 0% 50%", color: 'gray' }}>0.0</p>
+                    <p style={{ fontSize: '20px', margin: "3.5% 0% 0% 50%", color: 'gray' }}>{CurrentBG}</p>
                     <p style={{ margin: "5% 0% 0% 0%" }}>xyz &nbsp; </p>
                     <p style={{ color: 'gray', margin: '5% 1% 0% 1%' }}>|</p>
                     <img
@@ -365,7 +374,7 @@ function BolusForm() {
 
 
                         <div>
-                            <select style={{width:'100%',height:'40px'}} >
+                            <select style={{width:'100%',height:'40px'}} onChange={onChange4} >
                                 {ArrayList(0,301).map(data => (
                                     <option value={data}>{data}</option>
                                 ))}

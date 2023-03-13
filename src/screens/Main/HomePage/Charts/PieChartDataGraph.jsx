@@ -13,14 +13,14 @@ export default function PieChartDataGraph() {
   const Glucose = useState(
     todayReadingReducer && todayReadingReducer.allProjectData && todayReadingReducer.allProjectData.data && todayReadingReducer.allProjectData.data.glucose
   )
-  console.log(Glucose[0])
+  // console.log(Glucose[0])
   const Insulin = useState(
     todayReadingReducer && todayReadingReducer.allProjectData && todayReadingReducer.allProjectData.data && todayReadingReducer.allProjectData.data.insulin
   )
   const Carb = useState(
     todayReadingReducer && todayReadingReducer.allProjectData && todayReadingReducer.allProjectData.data && todayReadingReducer.allProjectData.data.carb
   )
-  console.log()
+ 
   const dataChart1 = {
   
     datasets: [

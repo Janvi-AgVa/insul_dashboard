@@ -43,7 +43,7 @@ export const todayReading = () => async (dispatch) => {
         type: TODAYREADING_SUCCESS,
         payload: data,
       });
-    console.log('data',data)
+    // console.log('data',data)
   } catch (error) {
     console.log("error", error);
     dispatch({
@@ -86,7 +86,7 @@ export const avgfromdaterange = ({ start, end }) => async (dispatch) => {
         type: AVGFROMDATERANGE_SUCCESS,
         payload: response.data.data,
       });
-    console.log('data1',response.data.data)
+    // console.log('data1',response.data.data)
   } catch (error) {
     console.log("error", error);
     dispatch({
@@ -187,7 +187,7 @@ export const deviceData = () => async (dispatch) => {
   }
 };
 
-//Get insuline and glucose reading weekly
+//Get insuline and glucose reading 
 export const gettingReading = ({ start, end }) => async (dispatch) => {
   try {
     dispatch({
@@ -214,7 +214,7 @@ export const gettingReading = ({ start, end }) => async (dispatch) => {
         type: GET_READING_SUCCESS,
         payload: response.data.data,
       });
-    console.log('data2',response.data.data)
+    // console.log('data2',response.data.data)
   } catch (error) {
     console.log("error", error);
     dispatch({

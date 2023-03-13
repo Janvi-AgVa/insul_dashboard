@@ -9,6 +9,12 @@ const cookies = new Cookies();
 export default function BarGraphInsul() {
     const Dispatch = useDispatch();
     const navigate = useNavigate();
+    const getReadingReducer = useSelector((state) => state.getReadingReducer)
+    const weeklyGlucose = useState(
+        getReadingReducer && getReadingReducer.data && getReadingReducer.data.glucose 
+         )
+    const weekData = weeklyGlucose[0]
+    
     useEffect(() => {
         if (!cookies.get('ddAdminToken')) {
           navigate('/');
@@ -22,13 +28,6 @@ export default function BarGraphInsul() {
         }));
     
       }, [navigate]);
-    
-    const getReadingReducer = useSelector((state) => state.getReadingReducer)
-    const weeklyGlucose = useState(
-        getReadingReducer && getReadingReducer.data && getReadingReducer.data.glucose 
-         )
-    const weekData = weeklyGlucose[0]
-    
     
     const data = [
 

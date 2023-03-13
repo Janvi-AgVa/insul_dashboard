@@ -27,3 +27,8 @@ img{
     margin-right: 2%;
 
 }
+@media screen and (max-width:1200) {
+    .sidebar{
+        width: 200px;
+    }
+}

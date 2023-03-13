@@ -30,7 +30,7 @@ function ProfileForm() {
     country: "",
   });
   const [fieldError, setfieldError] = useState(null);
-  const { loading, error, data } = updateInformationReducer;
+  const { data } = updateInformationReducer;
   const history = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();

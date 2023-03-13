@@ -29,7 +29,7 @@ export default function BarGraphInsul() {
         getReadingReducer && getReadingReducer.data && getReadingReducer.data.insulin
     )
     const weekData = weeklyInsulin[0]
-    console.log(getReadingReducer)
+    // console.log(getReadingReducer)
 
    
     

@@ -3,13 +3,13 @@ import Table from 'react-bootstrap/Table';
 import Cookies from 'universal-cookie';
 import { useDispatch, useSelector } from "react-redux";
 import {avgfromdaterange} from "../../../store/action/DashboardAction"
-import {  getMonthlyDate} from '../../../helper/getDate'
+import {  getDate} from '../../../helper/getDate'
 import { useNavigate } from 'react-router-dom';
 const cookies = new Cookies();
 
 
 
-function Monthly() {
+function Weekly() {
     const Dispatch = useDispatch();
     const navigate = useNavigate();
     const avgFromDateRangeReducer = useSelector((state) => state.avgFromDateRangeReducer)
@@ -22,8 +22,8 @@ function Monthly() {
           navigate('/');
       }
 
-      var start = getMonthlyDate()[0]
-      var end = getMonthlyDate()[1]
+      var start = getDate()[0]
+      var end = getDate()[1]
       Dispatch(avgfromdaterange({
           start,
           end,
@@ -61,4 +61,4 @@ function Monthly() {
   )
 }
 
-export default Monthly
+export default Weekly

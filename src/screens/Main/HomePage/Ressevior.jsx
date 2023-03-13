@@ -10,7 +10,7 @@ const cookies = new Cookies();
 function Ressevior() {
   const Dispatch = useDispatch();
   const deviceDataReducer = useSelector((state) => state.deviceDataReducer);
-  console.log('DataReducer',deviceDataReducer)
+  // console.log('DataReducer',deviceDataReducer)
 
 
   const Ressevior = useState(

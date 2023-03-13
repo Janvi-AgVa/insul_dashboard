@@ -3,34 +3,36 @@ import Table from 'react-bootstrap/Table';
 import Cookies from 'universal-cookie';
 import { useDispatch, useSelector } from "react-redux";
 import {avgfromdaterange} from "../../../store/action/DashboardAction"
-import {  getMonthlyDate} from '../../../helper/getDate'
+import {  getYearlyDate} from '../../../helper/getDate'
 import { useNavigate } from 'react-router-dom';
 const cookies = new Cookies();
 
 
 
-function Monthly() {
+function Weekly() {
     const Dispatch = useDispatch();
     const navigate = useNavigate();
     const avgFromDateRangeReducer = useSelector((state) => state.avgFromDateRangeReducer)
     const Insulin = useState(
       avgFromDateRangeReducer && avgFromDateRangeReducer.data && avgFromDateRangeReducer.data.insulin && avgFromDateRangeReducer.data.insulin.avgInsulin
   )
+  const [insulin, setInsulin] = useState();
   // console.log(Insulin)
     useEffect(() => {
       if (!cookies.get('ddAdminToken')) {
           navigate('/');
       }
-
-      var start = getMonthlyDate()[0]
-      var end = getMonthlyDate()[1]
+      var start = getYearlyDate()[0]
+      var end = getYearlyDate()[1]
       Dispatch(avgfromdaterange({
           start,
           end,
 
       }));
+      setInsulin(Insulin[0].toFixed(2))
+
    
-  },[]);
+  },[insulin]);
 
   return (
     <div>
@@ -47,7 +49,7 @@ function Monthly() {
             <tbody >
               <tr style={{height:'100px'}} >
                 <td></td>
-                <td>{Insulin}</td>
+                <td>{insulin}</td>
                 <td>md/dl</td>
                 <td>53-1</td>
                 <td>NF <br/> F</td>
@@ -61,4 +63,4 @@ function Monthly() {
   )
 }
 
-export default Monthly
+export default Weekly

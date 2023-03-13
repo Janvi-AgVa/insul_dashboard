@@ -32,10 +32,10 @@ function Setting() {
             height:'50px'
 
           }}>
-           <Dropdown.Toggle style={{backgroundColor:'white'}}>
-       
+           <Dropdown.Toggle style={{backgroundColor:'white',margin:'2% 0% 0% 10%',color:'black',border:'none'}}>
+            Select Glucose Unit &nbsp; &nbsp;
       </Dropdown.Toggle>
-          <Dropdown.Menu>
+          <Dropdown.Menu >
         <Dropdown.Item value="mg/dL">mg/dL</Dropdown.Item>
         <Dropdown.Item value="mmol/L'">mmol/L</Dropdown.Item>
 

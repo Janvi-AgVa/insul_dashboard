@@ -26,7 +26,7 @@ function WeekReading() {
     const [insulin, setInsulin] = useState();
     const [previnsulin, setPrevInsulin] = useState();
 
-    console.log("avgInsulin",weeklyInsulin,previnsulin)
+    // console.log("avgInsulin",weeklyInsulin,previnsulin)
 
     const [filled, setFilled] = useState(0);
     const [prevfilled, setPrevFilled] = useState(0);
@@ -50,10 +50,7 @@ function WeekReading() {
         } else {
             setCompare("same")
         }
-        setFilled(insulin)
-        setPrevFilled(previnsulin)
-        setInsulin(weeklyInsulin[0].toFixed(2))
-        setPrevInsulin(prevInsulin[0].toFixed(2))
+      
         var start = getDate()[0]
         var end = getDate()[1]
         Dispatch(avgfromdaterange({
@@ -63,13 +60,17 @@ function WeekReading() {
         }));
         start = getprevDate()[0]
         end = getprevDate()[1]
-        console.log(start, end)
+      
 
         Dispatch(previousWeek({
             start,
             end,
 
         }));
+        setFilled(insulin)
+        setPrevFilled(previnsulin)
+        setInsulin(weeklyInsulin[0].toFixed(2))
+        setPrevInsulin(prevInsulin[0].toFixed(2))
     },[insulin, previnsulin],  [comapre],[filled], [prevfilled],[navigate]);
 
 

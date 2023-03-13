@@ -1,0 +1,39 @@
+.main-Footer {
+  background-color: #363556;
+  width: 100%;
+  height: 200px;
+  margin-top: 2%;
+  display: flex;
+  position: absolute;
+}
+.side-div {
+  margin-left: 3%;
+  margin-top: 3%;
+}
+.copyright {
+  margin: 0%;
+  margin-top: 15%;
+  color: white;
+  font-size: 12px
+}
+.brand {
+  margin-left: 4%;
+  color: white;
+  font-size: 35px;
+  margin-top: 0%;
+}
+.Contact {
+  color: white;
+  margin-top: 4%;
+  margin-left: 60%;
+}
+.Contact ul li {
+  font-size: 12px;
+  text-decoration: none;
+}
+.Tag-name {
+ 
+  font-size: 15px;
+  font-weight: 700;
+}
+

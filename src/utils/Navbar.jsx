@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Cookies from 'universal-cookie';
 import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
+import '../css/Responsive/Navbar.css'
 import { adminLogout } from "../store/action/AdminAction";
 function Navbar() {
   const cookies = new Cookies();
@@ -36,9 +37,10 @@ function Navbar() {
     <section>
 
 
-      <div style={{ backgroundColor: '#363556', width: '100%', height: '70px', marginTop: '0%', display: 'flex',position:'absolute' }}>
+      <div  style={{ backgroundColor: '#363556', width: '100%', height: '70px', marginTop: '0%', display: 'flex',position:'absolute' }}>
         <p style={{ marginLeft: '4%', color: 'white', fontSize: '35px', marginTop: '1%' }}>InsuLink</p>
         <div
+          className='NavBar'
           style={{
             margin: "1.5% 10% 2% 45%", display: 'flex'
           }}
@@ -94,7 +96,7 @@ function Navbar() {
                     }}>
                       <b> {adminInfo && adminInfo.data && adminInfo.data.user && adminInfo.data.user.firstName}&nbsp;{adminInfo && adminInfo.data && adminInfo.data.user && adminInfo.data.user.lastName}
                       </b></p>
-                    <p >
+                    <p style={{margin:'0%',padding:'0%'}}>
                       <Link style={{
                         color: 'white'
                       }}>{adminInfo && adminInfo.data && adminInfo.data.user && adminInfo.data.user.email}</Link>
