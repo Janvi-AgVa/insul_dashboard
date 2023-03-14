@@ -36,4 +36,10 @@
   font-size: 15px;
   font-weight: 700;
 }
+@media (min-width: 768px) and (max-width: 1024px) {
+  .main-Footer{
+    width: 50%;
+  }
+
+}
 

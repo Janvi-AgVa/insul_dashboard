@@ -21,7 +21,8 @@ function SideBar() {
               src={Home}
               alt="home-icon"
             />
-            HOME</NavLink>
+            <p>HOME</p>
+            </NavLink>
 
 
         </li>
@@ -35,7 +36,7 @@ function SideBar() {
               src={Bolus}
               alt="bolus-icon"
             />
-            BOLUS WIZARD</NavLink>
+            <p >BOLUS WIZARD</p></NavLink>
 
 
         </li>
@@ -50,7 +51,7 @@ function SideBar() {
               src={Report}
               alt="report-icon"
             />
-            REPORT</NavLink>
+            <p>REPORT</p></NavLink>
 
 
         </li>
@@ -65,7 +66,7 @@ function SideBar() {
             src={Setting}
             alt="setting-icon"
           />
-         SETTING</NavLink>
+         <p>SETTING</p></NavLink>
 
 
         </li>
