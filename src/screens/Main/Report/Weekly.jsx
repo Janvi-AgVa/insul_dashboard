@@ -16,6 +16,7 @@ function Weekly() {
     const Insulin = useState(
       avgFromDateRangeReducer && avgFromDateRangeReducer.data && avgFromDateRangeReducer.data.insulin && avgFromDateRangeReducer.data.insulin.avgInsulin
   )
+  const [insulin, setInsulin] = useState();
   // console.log(Insulin)
     useEffect(() => {
       if (!cookies.get('ddAdminToken')) {
@@ -29,8 +30,10 @@ function Weekly() {
           end,
 
       }));
+      setInsulin(Insulin[0].toFixed(2))
+
    
-  },[]);
+  },[insulin]);
 
   return (
     <div>

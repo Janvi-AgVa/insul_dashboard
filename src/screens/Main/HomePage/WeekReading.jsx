@@ -33,19 +33,14 @@ function WeekReading() {
 
     const [comapre, setCompare] = useState("")
 
-
-
-  
-
-
     // CHECKING IF USER IS LOGIN OR NOT
     useEffect(() => {
         if (!cookies.get('ddAdminToken')) {
             navigate('/');
         }
-        if (weeklyInsulin < prevInsulin) {
+        if (weeklyInsulin > prevInsulin) {
             setCompare("less than")
-        } else if (weeklyInsulin > prevInsulin) {
+        } else if (weeklyInsulin < prevInsulin) {
             setCompare("greater than")
         } else {
             setCompare("same")

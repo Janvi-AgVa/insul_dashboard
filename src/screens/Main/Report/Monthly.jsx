@@ -16,12 +16,12 @@ function Monthly() {
     const Insulin = useState(
       avgFromDateRangeReducer && avgFromDateRangeReducer.data && avgFromDateRangeReducer.data.insulin && avgFromDateRangeReducer.data.insulin.avgInsulin
   )
+  const [insulin, setInsulin] = useState();
   // console.log(Insulin)
     useEffect(() => {
       if (!cookies.get('ddAdminToken')) {
           navigate('/');
       }
-
       var start = getMonthlyDate()[0]
       var end = getMonthlyDate()[1]
       Dispatch(avgfromdaterange({
@@ -29,9 +29,10 @@ function Monthly() {
           end,
 
       }));
-   
-  },[]);
+      setInsulin(Insulin[0].toFixed(2))
+  },[insulin]);
 
+  
   return (
     <div>
        <Table  bordered  style={{margin:"5%", width:'85%'}}>

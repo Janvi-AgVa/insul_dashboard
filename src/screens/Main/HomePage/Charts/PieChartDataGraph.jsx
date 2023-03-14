@@ -1,11 +1,12 @@
 /* eslint-disable */
 
 import React, { useState } from "react";
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import { Chart as ChartJS, ArcElement } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
-ChartJS.register(ArcElement, Tooltip, Legend);
+import { fontSize } from "@mui/system";
+ChartJS.register(ArcElement);
 
 
 export default function PieChartDataGraph() {
@@ -58,77 +59,32 @@ export default function PieChartDataGraph() {
   };
   
   
-  const options = {
-   
-  };
-  const textCentre1={
-    id:'textCentre',
-    beforeDatasetsDraw(chart,args,pluginsOptions){
-      const{ctx,data}=chart;
-      ctx.save();
-      ctx.font='bolder 12px Roboto';
-      ctx.fillStyle="#363556";
-      ctx.textAlign="centre";
-      ctx.textBaseline="middle";
-      ctx.fillText(Glucose[0],chart.getDatasetMeta(0).data[0].x,chart.getDatasetMeta(0).data[0].y)
-     
-  
-    }
-  }
-  const textCentre2={
-    id:'textCentre',
-    beforeDatasetsDraw(chart,args,pluginsOptions){
-      const{ctx,data}=chart;
-      ctx.save();
-      ctx.font='bolder 12px Roboto';
-      ctx.fillStyle="#363556";
-      ctx.textAlign="centre";
-      ctx.textBaseline="middle";
-      ctx.fillText(Insulin[0],chart.getDatasetMeta(0).data[0].x,chart.getDatasetMeta(0).data[0].y)
-     
-  
-    }
-  }
-  const textCentre3={
-    id:'textCentre',
-    beforeDatasetsDraw(chart,args,pluginsOptions){
-      const{ctx,data}=chart;
-      ctx.save();
-      ctx.font='bolder 12px Roboto';
-      ctx.fillStyle="#363556";
-      ctx.textAlign="centre";
-      ctx.textBaseline="middle";
-      ctx.fillText(Carb[0],chart.getDatasetMeta(0).data[0].x,chart.getDatasetMeta(0).data[0].y)
-     
-  
-    }
-  }
+
   return (
     <>
       <div style={{display:'flex',flexDirection:'row', marginLeft:'1%',marginTop:'5%' }}>
       <div style={{height:'30%',width:'30%',marginRight:'5%'}}>
        <Doughnut
         data={dataChart1}
-        options={options}
-        plugins={[textCentre1]}
        ></Doughnut>
-       <p style={{marginLeft:'22%',marginTop:'15%',fontWeight:'bold',fontSize:'12px'}}>GLUCOMETRE</p>
+       <p style={{margin:"-52% 0% 0% 43%", position:'relative', fontSize:'12px', fontWeight:'bold'}}>{Glucose}</p>
+       <p style={{marginLeft:'22%',marginTop:'55%',fontWeight:'bold',fontSize:'12px'}}>GLUCOMETRE</p>
        </div>
        <div style={{height:'30%',width:'30%',marginRight:'5%'}}>
        <Doughnut
         data={dataChart2}
-        options={options}
-        plugins={[textCentre2]}
+       
        ></Doughnut>
-         <p style={{marginLeft:'20%',marginTop:'15%',fontWeight:'bold',fontSize:'12px'}}>INSULIN DOSE</p>
+        <p style={{margin:"-52% 0% 0% 43%", position:'relative',fontSize:'12px', fontWeight:'bold'}}>{Insulin}</p>
+         <p style={{marginLeft:'20%',marginTop:'55%',fontWeight:'bold',fontSize:'12px'}}>INSULIN DOSE</p>
        </div>
        <div style={{height:'30%',width:'30%'}}>
        <Doughnut
         data={dataChart3}
-        options={options}
-        plugins={[textCentre3]}
+       
        ></Doughnut>
-         <p style={{marginLeft:'25%',marginTop:'15%',fontWeight:'bold',fontSize:'12px'}}>CARB TAKE</p>
+        <p style={{margin:"-52% 0% 0% 43%", position:'relative',fontSize:'12px', fontWeight:'bold'}}>{Carb}</p>
+         <p style={{marginLeft:'25%',marginTop:'55%',fontWeight:'bold',fontSize:'12px'}}>CARB TAKE</p>
        </div>
       </div>
     </>
